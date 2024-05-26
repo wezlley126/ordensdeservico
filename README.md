@@ -1,20 +1,29 @@
-Para acessar a manipulação do banco, basta que sejam feitas solicitações GET, POST, PUT ou DELETE aos arquivos:
-users.js e ordens.js dentro da pasta /api, na GET se recebe os dados, no POST caso não seja passado ID,
-será criado um(a) novo(a) usuário/ordem, caso seja passado ID, ele irá alterar os dados com base no ID,
-no PUT é retornado os dados de um único item para auxiliar o sistema na alteração dos dados e no delete
-é passado somente o ID do item que será apagado pela url.
+Para realizar solicitações a api, basta fazer requisição aos arquivos users.js e ordens.js dentro da pasta /api.
 
-Variavéis de ambiente:
-há 8 variáveis, sendo 6 para a configuração da conexão com o banco do firebase
+<h2>Solicitações REST</h2>
+<ol>
+  <li>GET: Retorna os dados dos clientes e das ordens de serviço</li>
+  <li>POST: Caso não seja passado o id, somente os dados, irá realizar a criação de um novo item, caso seja passado um id, irá alterar os dados do item existe com base no id</li>
+  <li>PUT: Retorna os dados de um único item</li>
+  <li>DELETE: Apaga o item com baso no id passado.</li>
+</ol>
 
-FIRE_API_KEY=
-FIRE_AUTH_DOMAIN=
-FIRE_PROJECT_ID=
-FIRE_STORAGE_BUCKET=
-FIRE_MESSAGINGSENDERID=
-FIRE_APP_ID=
+OBS: O put e delete pasam o id pela url sendo o usuário ?Userid=****** e o ordens de serviço ?id=******
 
-e duas para os nomes que serão dados as duas collections de ordens de serviço e dos clientes
+<h2>Variavéis de ambiente</h2>
+<b>há 8 variáveis, sendo 6 para a configuração da conexão com o banco do firebase</b><br/><br/>
 
-FIRE_ORDENS_COLLECTION=
-FIRE_USERS_COLLECTION=
+<ul>
+  <li>FIRE_API_KEY=</li>
+  <li>FIRE_AUTH_DOMAIN=</li>
+  <li>FIRE_PROJECT_ID=</li>
+  <li>FIRE_STORAGE_BUCKET=</li>
+  <li>FIRE_MESSAGINGSENDERID=</li>
+  <li>FIRE_APP_ID=</li>
+</ul>
+
+<b>e duas para os nomes que serão dados as duas collections de ordens de serviço e dos clientes</b>
+<ul>
+  <li>FIRE_ORDENS_COLLECTION=</li>
+  <li>FIRE_USERS_COLLECTION=</li>
+</ul>

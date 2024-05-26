@@ -29,7 +29,7 @@ export default function handler(req, res) {
         const getData = async () => {
             let data = [];
 
-            const ordens = await getDocs(collection(db, "ordensServico"));
+            const ordens = await getDocs(collection(db, process.env.FIRE_ORDENS_COLLECTION));
             
             ordens.forEach((doc) => {
                 let tempData = doc.data();
@@ -47,7 +47,7 @@ export default function handler(req, res) {
     else if (req.method == 'POST') {
 
         const insertData = async (client, date, describe, cost) => {
-            await addDoc(collection(db, "ordensServico"), {
+            await addDoc(collection(db, process.env.FIRE_ORDENS_COLLECTION), {
                 status: 'iniciado',
                 client: client,
                 date: date,
@@ -65,7 +65,7 @@ export default function handler(req, res) {
 
             // Organiza a inserção dos dados
             const idOrdem = id
-            const valid_ordem = doc(db, "ordensServico", idOrdem);
+            const valid_ordem = doc(db, process.env.FIRE_ORDENS_COLLECTION, idOrdem);
       
             // Atualiza os dados
             await updateDoc(valid_ordem, {
@@ -93,7 +93,7 @@ export default function handler(req, res) {
         
         const getOrdem = async (data) => {
             const id = data.id;
-            const datadb = await getDoc(doc(db, "ordensServico", id))
+            const datadb = await getDoc(doc(db, process.env.FIRE_ORDENS_COLLECTION, id))
             //console.log('Dados recebidos --------------> ', dataReceived.data)
             let tempData = datadb.data();
             tempData['id'] = datadb.id
@@ -122,7 +122,7 @@ export default function handler(req, res) {
         }
         const dataReceived = req.query;
         //console.log('Id recebido para apagar: ', dataReceived.idUser)
-        deleto(dataReceived.id, "ordensServico")
+        deleto(dataReceived.id, process.env.FIRE_ORDENS_COLLECTION)
     }
 
 }

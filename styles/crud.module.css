@@ -1,0 +1,103 @@
+/**
+ * Nome do arquivo: crud.module.css
+ * Data de criação: 26/05/2024
+ * Autor: Weslley Pereira Borges
+ * Matrícula: 01608378
+ *
+ * Descrição:
+ * Este arquivo é responsável por configurar todo o css das duas páginas, tanto de clients quanto de OS
+ */
+
+.addForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 2px solid white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.divForm{
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    bottom: 0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.novaOrdem{
+    width: 40rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.novaOrdem:hover{
+    background-color: rgb(44, 109, 44);
+    color: white;
+    transition: 0.3s;
+}
+
+.closeForm{
+    padding: 1rem 2rem;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+}
+
+.closeForm:hover{
+    background-color: rgb(192, 50, 50);
+    color: white;
+    transition: 0.3s;
+}
+
+.divPai{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 2rem;
+}
+
+.inputs{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.inputs:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.tableData td{
+    border: 2px solid white;
+    padding: 0.5rem;
+}
+
+.divTable{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav{
+    padding: 2rem;
+}
+
+.links{
+    text-decoration: none;
+    background-color: white;
+    padding: 1rem 2rem;
+}
+
+.links:hover{
+    background-color: rgb(201, 87, 201);
+    transition: 0.3s;
+    color: black;
+}

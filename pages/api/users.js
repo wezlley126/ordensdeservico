@@ -32,7 +32,7 @@ if(req.method == 'GET'){
 
     const getClients = async () => {
         
-        const dataResponse = await getDocs(collection(db, process.env.FIRE_USERS_COLLECTION));
+        const dataResponse = await getDocs(collection(db, "clients"));
         /* res.status(200).json(dataResponse) */
         dataResponse.forEach((doc) => {
             let tempData = doc.data();
@@ -48,7 +48,7 @@ if(req.method == 'GET'){
 
 else if(req.method == 'POST'){
     const insert = async (nome, endereco, telefone, email) => {
-        const retorno = await addDoc(collection(db, process.env.FIRE_USERS_COLLECTION), {
+        const retorno = await addDoc(collection(db, 'clients'), {
             nome: nome,
             endereco: endereco,
             telefone: telefone,
@@ -66,7 +66,7 @@ else if(req.method == 'POST'){
 
       // Organiza a inserção dos dados
       const idClient = id
-      const valid_usuario = doc(db, process.env.FIRE_USERS_COLLECTION, idClient);
+      const valid_usuario = doc(db, 'clients', idClient);
 
       // Atualiza os dados
       await updateDoc(valid_usuario, {
@@ -91,11 +91,11 @@ else if(req.method == 'POST'){
 if(req.method == 'PUT'){
     const getUser = async (data) => {
         const idUser = data.idUser;
-        const datadb = await getDoc(doc(db, process.env.FIRE_USERS_COLLECTION, idUser))
+        const datadb = await getDoc(doc(db, 'clients', idUser))
         //console.log('Dados recebidos --------------> ', dataReceived.data)
         let tempData = datadb.data();
         tempData['id'] = datadb.id
-        res.status(302).json(tempData);
+        res.status(200).json(tempData);
     }
     const dataReceived = req.body
     //console.log('dados recebidos aqui --------------> ', dataReceived)
@@ -119,7 +119,7 @@ else if(req.method == 'DELETE'){
     }
     const dataReceived = req.query;
     //console.log('Id recebido para apagar: ', dataReceived.idUser)
-    deleto(dataReceived.idUser, process.env.FIRE_USERS_COLLECTION)
+    deleto(dataReceived.idUser, 'clients')
 }
 
 }

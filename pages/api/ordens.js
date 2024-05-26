@@ -11,7 +11,6 @@
  * Este script é parte o curso de ADS.
  */
 
-
 import db from './firebase.js';
 import { 
     collection,
@@ -97,7 +96,7 @@ export default function handler(req, res) {
             //console.log('Dados recebidos --------------> ', dataReceived.data)
             let tempData = datadb.data();
             tempData['id'] = datadb.id
-            res.status(302).json(tempData);
+            res.status(200).json(tempData);
         }
         const dataReceived = req.query
         //console.log('dados recebidos aqui --------------> ', dataReceived)
@@ -117,7 +116,7 @@ export default function handler(req, res) {
             const valid_usuario = doc(db, table, idClient);
     
             await deleteDoc(valid_usuario).then(() => {
-                res.status(200).json('Ordem apagada com sucesso!');
+                res.status(200).json('Usuário foi fumar cigarro');
             })
         }
         const dataReceived = req.query;

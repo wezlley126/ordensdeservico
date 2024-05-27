@@ -114,7 +114,7 @@ export default function Clients() {
     const getUser = async (e) => {
         openForm();
         // Pega os dados do usuário do botaõ Alterar
-        const idUser = {idUser: e.target.value}
+        const idUser = {id: e.target.value}
         const dataReceived = await axios.put('/api/users', idUser)
         //console.log(dataReceived.data)
         setInputsValues(dataReceived.data.nome, dataReceived.data.email, dataReceived.data.telefone, dataReceived.data.endereco)

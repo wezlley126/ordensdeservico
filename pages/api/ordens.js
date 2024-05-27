@@ -11,7 +11,7 @@
  * Este script é parte o curso de ADS.
  */
 
-import db from './firebase.js';
+import db from '../../repository/firebase.js';
 import { 
     collection,
     addDoc,

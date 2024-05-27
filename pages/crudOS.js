@@ -97,11 +97,15 @@ export default function ordensServico() {
     }
 
     const insert = async () => {
-        const dataReceived = await axios.post('/api/ordens', inputs);
-        console.log(dataReceived.data);
-        setInputsValues(false, null, null, null, null, null);
-        getData();
-        setInputs({});
+        if(inputs == {}){
+            console.log('Preencha os campos corretamente')
+        }else{
+            const dataReceived = await axios.post('/api/ordens', inputs);
+            console.log(dataReceived.data);
+            setInputsValues(false, null, null, null, null, null);
+            getData();
+            setInputs({});
+        }
     }
 
     const getOrdem = async (e) => {

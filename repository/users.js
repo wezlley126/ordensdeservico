@@ -1,3 +1,17 @@
+/**
+ * Nome do arquivo: users.js
+ * Data de criação: 27/05/2024
+ * Autor: Weslley Pereira Borges
+ * Matrícula: 01608378
+ *
+ * Descrição:
+ * Este arquivo é responsável por receber requisições da API e 
+ * repassar as solicitações, com os tratamentos nescessários para fornecer uma resposta
+ * fazendo parte da camada de banco de dados
+ *
+ * Este script é parte o curso de ADS.
+ */
+
 import db from './firebase.js';
 import { 
     collection,

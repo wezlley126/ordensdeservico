@@ -110,8 +110,9 @@ export default function ordensServico() {
 
     const getOrdem = async (e) => {
         openForm();
-        const id = e.target.value
-        const requestData = await axios.put(`/api/ordens?id=${id}`)
+        const id = {id: e.target.value}
+        //const requestData = await axios.put(`/api/ordens?id=${id}`)
+        const requestData = await axios.put(`/api/ordens`, id)
         const data = requestData.data
         setInputsValues(true, data.status, data.client, data.date, data.describe, data.cost)
         setInputs(data);

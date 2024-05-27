@@ -11,16 +11,6 @@
  * Este script é parte o curso de ADS.
  */
 
-import db from './../../repository/firebase.js';
-import { 
-    collection,
-    addDoc,
-    getDocs,
-    getDoc,
-    updateDoc,
-    deleteDoc,
-    doc
-    } from "firebase/firestore";
 import {getClients, getUser, insert, update, deleto} from './../../repository/users.js'
 
 export default async function handler(req, res){
